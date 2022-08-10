@@ -69,7 +69,7 @@ document.querySelector("form").addEventListener("submit", e => {
   }
   
   // store current task to track changes
-  var currentTask = null;
+  const currentTask = null;
   
   // get current task
   function getCurrentTask(event) {
