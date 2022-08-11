@@ -74,7 +74,7 @@
   
   }
   li {
-    width : 600px;
+    width : auto;
   }
   .app ul li {
     font-size: 20px;
@@ -93,8 +93,7 @@
     height:1.3em;
     cursor: pointer;
     border-radius: 50%;
-    background-color: rgb(246, 230, 6);
-    border: 1px solid rgb(246, 230, 6);
+    background-color: rgb(246, 58, 6);
     -webkit-appearance: none;
   }
   
@@ -102,11 +101,16 @@
     background-color: #07ff28;
     border: 1ps solid #07ff28;
   }
-  
+  .div-box {
+    height: auto;
+    background-color: whitesmoke;
+    border: 1px solid blue;
+    border-radius: 10px;
+  }
   .task {
     font-size: 18px;
     padding: 0 10px;
-    width: fit-content;
+    width: 650px;
     background: transparent;
     border: none;
     color: #fff;
@@ -127,7 +131,7 @@
   }
   
   .completed {
-    color: rgba(192, 192, 192, 0.8);
+    color: green;
     text-decoration: line-through;
     font-style: italic;
     text-decoration-color: #f01206;
