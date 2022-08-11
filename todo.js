@@ -1,29 +1,15 @@
 
 
 // On form submit add task
-document.querySelector("form").addEventListener("submit", e => {
+const form = document.querySelector("form");
+form.addEventListener("submit", e => {
     e.preventDefault();
     addTask();
   });
   
-  function loadTasks() {
-  
-  
-    // Get the tasks and convert it to an array
-    let tasks = Array("tasks");
-  
-    // Loop through the tasks and add them to the list
-    tasks.forEach(task => {
-      const list = document.querySelector("ul");
-      const li = document.createElement("li");
-      li.innerHTML = `<input type="checkbox" onclick="taskComplete(this)" class="check" ${task.completed ? 'checked' : ''}>
-            <input type="text" value="${task.task}"  class="task ${task.completed ? 'completed' : ''}" onfocus="getCurrentTask(this)" onblur="editTask(this)">
-            <i class="fa fa-trash" onclick="removeTask(this)"></i>`;
-      list.insertBefore(li, list.children[0]);
-    });
-  }
-  
-  function addTask() {
+ 
+  //-----------------------------AddTasks
+  const addTask = () => {
     const task = document.querySelector("form input");
     const list = document.querySelector("ul");
     // return if task is empty
@@ -32,7 +18,8 @@ document.querySelector("form").addEventListener("submit", e => {
       return false;
     }
     // check is task already exist
-    if (document.querySelector(`input[value="${task.value}"]`)) {
+    const taskExists = document.querySelector(`input[value="${task.value}"]`);
+    if (taskExists) {
       alert("Task already exist!");
       return false;
     }
@@ -46,8 +33,23 @@ document.querySelector("form").addEventListener("submit", e => {
     // clear input
     task.value = "";
   }
+  //----------------------Loadtasks
+   const loadTasks = () => {
+    // Get the tasks and convert it to an array
+    let tasks = Array("tasks");
   
-  function taskComplete(event) {
+    // Loop through the tasks and add them to the list
+    tasks.forEach(task => {
+      const list = document.querySelector("ul");
+      const li = document.createElement("li");
+      li.innerHTML = `<input type="checkbox" onclick="taskComplete(this)" class="check" ${task.completed ? 'checked' : ''}>
+            <input type="text" value="${task.task}"  class="task ${task.completed ? 'completed' : ''}" onfocus="getCurrentTask(this)" onblur="editTask(this)">
+            <i class="fa fa-trash" onclick="removeTask(this)"></i>`;
+      list.insertBefore(li, list.children[0]);
+    });
+  }
+    //----------------------TaskComplete
+  const taskComplete = (event) => {
     let tasks = Array("tasks");
     tasks.forEach(task => {
       if (task.task === event.nextElementSibling.value) {
@@ -56,8 +58,8 @@ document.querySelector("form").addEventListener("submit", e => {
     });6
     event.nextElementSibling.classList.toggle("completed");
   }
-  
-  function removeTask(event) {
+      //----------------------Remove
+  const removeTask = (event) => {
     let tasks = Array("tasks");
     tasks.forEach(task => {
       if (task.task === event.parentNode.children[1].value) {
@@ -72,12 +74,12 @@ document.querySelector("form").addEventListener("submit", e => {
   const currentTask = null;
   
   // get current task
-  function getCurrentTask(event) {
+  const getCurrentTask = (event) => {
     currentTask = event.value;
   }
   
-  // edit the task and update local storage
-  function editTask(event) {
+    //----------------------EditTask
+    const editTask = (event) => {
     let tasks = Array("tasks");
     // check if task is empty
     if (event.value === "") {
@@ -87,15 +89,17 @@ document.querySelector("form").addEventListener("submit", e => {
     }
     // task already exist
     tasks.forEach(task => {
-      if (task.task === event.value) {
+      const taskValue = (task.task === event.value);
+      if (taskValue) {
         alert("Task already exist!");
         event.value = currentTask;
         return;
       }
     });
-    // update task
+     //----------------------UpdateTask
     tasks.forEach(task => {
-      if (task.task === currentTask) {
+      const updateTask = (task.task === currentTask);
+      if (updateTask) {
         task.task = event.value;
       }
     });
