@@ -1,6 +1,13 @@
 
+body{
+	margin: 0;
+    padding-top: 100px;
+    min-height: 100vh;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
 * {
-  margin: 0
+  margin: 0;
 }
 
 .container {
@@ -8,112 +15,101 @@
   flex-direction: column;
   align-items: center;
   padding-top: 50px;
-  background-color: #e1e3ea;
+  /* background-color: #e1e3ea; */
   height: 100vh;
   font-family: sans-serif;
-  width: 100%;
 }
 
 .app {
   width: 60%;
+  --color-bg: white;
+  --wrapper-border: 10px solid #204975;
 }
-
-
 
 .app h1 {
   color: white;
   font-size: 40px;
   padding: 10px 0;
   text-align: center;
-  border-radius: .5rem .5rem 0 0;
-  background-color: #f30323;
+  border-radius: 0.5rem 0.5rem 0 0;
+  background-color: #044c92;
   font-family: "Tahoma", sans-serif;
   border-radius: 20px;
   margin: 2px;
-
 }
 
 .app form {
   display: flex;
   width: 100%;
-  background-color: none;
+  /* background-color: #262e4c; */
 }
 
 .app form input {
   border: none;
-  background-color: #094181;
+  background-color: #ffffff;
   font-size: 20px;
-  color: white;
+  color: #044c92;
   padding: 10px;
   width: 80%;
   border-radius: 20px;
   margin: 2px;
   font-style: italic;
+  outline: none;
 }
 
 .app form button {
   border: none;
-  color: white;
-  background-color: #094181;
+  color: #044c92;
+  background-color: #ffffff;
   font-size: 25px;
   font-weight: 600;
   height: 42px;
   width: 20%;
   border-radius: 20px;
   margin: 2px;
-
 }
 
 .app ul {
   list-style: none;
-  color: #e0e0e0;
+  color: #ec95cf;
   padding: 0;
   width: auto;
-
-  
-
 }
 
 .app ul li {
   font-size: 20px;
-  width: auto;
   padding: 10px;
-  background-color: #094181;
-  border-bottom: 1px solid #ffffff;
+  background-color: #ffffff;
+  border-bottom: 1px solid #40beff;
   border-radius: 10px;
   padding-inline-start: 20px;
   margin: 2px;
-
 }
+/* li {
+    width : 600px;
+  } */
 
 .check {
   width: 1.3em;
-  height:1.3em;
+  height: 1.3em;
   cursor: pointer;
   border-radius: 50%;
-  background-color: rgb(246, 230, 6);
-  border: 1px solid rgb(246, 230, 6);
+  background-color: rgb(246 195 230);
+  border: 1px solid rgb(246 195 230);
   -webkit-appearance: none;
 }
 
 .check:checked {
-  background-color: #07ff28;
-  border: 1ps solid #07ff28;
+  background-color: rgba(148, 187, 233, 1);
 }
 
 .task {
   font-size: 18px;
-  width: 800px;
   padding: 0 10px;
+  width: fit-content;
   background: transparent;
-  font-size: 20px;
   border: none;
-  color: #fff;
-
-}
- .border-line {
-  border: 1px solid #094181;
-  box-shadow: 5px 5px #cca48a;
+  color: #012a9d;
 }
 
 .task:focus {
@@ -126,7 +122,7 @@
 }
 
 .app ul li i:hover {
-  color: rgb(255, 82, 82);
+  color: rgba(148, 187, 233, 1);
 }
 
 .completed {
@@ -135,16 +131,16 @@
   font-style: italic;
   text-decoration-color: #f01206;
   animation: blink-animation 1s steps(5, start) infinite;
-        -webkit-animation: blink-animation 1s steps(5, start) infinite;
-      }
-      @keyframes blink-animation {
-        to {
-          visibility: hidden;
-        }
-      }
-      @-webkit-keyframes blink-animation {
-        to {
-          visibility: hidden;
-        }
-      }
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
 
