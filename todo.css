@@ -3,11 +3,15 @@ body{
 	margin: 0;
     padding-top: 100px;
     min-height: 100vh;
+
     background-image: url("calender.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 
-    /*background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);*/
+
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+
 }
 * {
   margin: 0;
@@ -28,9 +32,8 @@ body{
   --color-bg: white;
   --wrapper-border: 10px solid #204975;
   background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+
 }
-
-
 
 .app h1 {
   color: white;
@@ -42,24 +45,30 @@ body{
   font-family: "Tahoma", sans-serif;
   border-radius: 20px;
   margin: 2px;
-
 }
 
 .app form {
   display: flex;
   width: 100%;
+#  /* background-color: #262e4c; */
+#
 }
 
 .app form input {
   border: none;
   background-color: #ffffff;
   font-size: 20px;
+
   color: #f01206;
+
+  color: #044c92;
+
   padding: 10px;
   width: 80%;
   border-radius: 20px;
   margin: 2px;
   font-style: italic;
+  outline: none;
 }
 
 .app form button {
@@ -72,7 +81,6 @@ body{
   width: 20%;
   border-radius: 20px;
   margin: 2px;
-
 }
 
 .app ul {
@@ -80,26 +88,24 @@ body{
   color: #ec95cf;
   padding: 0;
   width: auto;
-
-  
-
 }
 
 .app ul li {
   font-size: 20px;
-  width: auto;
   padding: 10px;
   background-color: #ffffff;
   border-bottom: 1px solid #40beff;
   border-radius: 10px;
   padding-inline-start: 20px;
   margin: 2px;
-
 }
+/* li {
+    width : 600px;
+  } */
 
 .check {
   width: 1.3em;
-  height:1.3em;
+  height: 1.3em;
   cursor: pointer;
   border-radius: 50%;
   background-color: rgb(246 195 230);
@@ -111,6 +117,10 @@ body{
 .check:checked {
   background-color: rgba(148, 187, 233, 1);
 
+
+}
+
+
 }
 input[type=date] {
   border: 1px solid rgb(242, 236, 236);
@@ -118,11 +128,11 @@ input[type=date] {
 }
 .task {
   font-size: 18px;
-  width: 800px;
   padding: 0 10px;
+  width: fit-content;
   background: transparent;
-  font-size: 20px;
   border: none;
+
   color: #044c92;
 
 
@@ -130,6 +140,9 @@ input[type=date] {
  .border-line {
   border: 1px solid #094181;
   box-shadow: 5px 5px #cca48a;
+#
+  color: #012a9d;
+#
 }
 
 .task:focus {
@@ -140,13 +153,16 @@ input[type=date] {
   float: right;
   cursor: pointer;
 }
+#
 .hide {
   display: none;
 }
 .app ul li i:hover + .hide {
   display: block;
   color: red;
-  color: rgba(148, 187, 233, 1);
+#
+.app ul li i:hover {
+#  color: rgba(148, 187, 233, 1);
 }
 
 .completed {
@@ -155,16 +171,16 @@ input[type=date] {
   font-style: italic;
   text-decoration-color: #f01206;
   animation: blink-animation 1s steps(5, start) infinite;
-        -webkit-animation: blink-animation 1s steps(5, start) infinite;
-      }
-      @keyframes blink-animation {
-        to {
-          visibility: hidden;
-        }
-      }
-      @-webkit-keyframes blink-animation {
-        to {
-          visibility: hidden;
-        }
-      }
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
 
