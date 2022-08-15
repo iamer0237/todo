@@ -1,6 +1,16 @@
 
+body{
+	margin: 0;
+    padding-top: 100px;
+    min-height: 100vh;
+    background-image: url("calender.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    /*background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);*/
+}
 * {
-  margin: 0
+  margin: 0;
 }
 
 .container {
@@ -8,14 +18,16 @@
   flex-direction: column;
   align-items: center;
   padding-top: 50px;
-  background-color: #e1e3ea;
+  /* background-color: #e1e3ea; */
   height: 100vh;
   font-family: sans-serif;
-  width: 100%;
 }
 
 .app {
   width: 60%;
+  --color-bg: white;
+  --wrapper-border: 10px solid #204975;
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
 }
 
 
@@ -25,8 +37,8 @@
   font-size: 40px;
   padding: 10px 0;
   text-align: center;
-  border-radius: .5rem .5rem 0 0;
-  background-color: #f30323;
+  border-radius: 0.5rem 0.5rem 0 0;
+  background-color: #044c92;
   font-family: "Tahoma", sans-serif;
   border-radius: 20px;
   margin: 2px;
@@ -36,14 +48,13 @@
 .app form {
   display: flex;
   width: 100%;
-  background-color: none;
 }
 
 .app form input {
   border: none;
-  background-color: #094181;
+  background-color: #ffffff;
   font-size: 20px;
-  color: white;
+  color: #f01206;
   padding: 10px;
   width: 80%;
   border-radius: 20px;
@@ -53,8 +64,8 @@
 
 .app form button {
   border: none;
-  color: white;
-  background-color: #094181;
+  color: #044c92;
+  background-color: #ffffff;
   font-size: 25px;
   font-weight: 600;
   height: 42px;
@@ -66,7 +77,7 @@
 
 .app ul {
   list-style: none;
-  color: #e0e0e0;
+  color: #ec95cf;
   padding: 0;
   width: auto;
 
@@ -78,8 +89,8 @@
   font-size: 20px;
   width: auto;
   padding: 10px;
-  background-color: #094181;
-  border-bottom: 1px solid #ffffff;
+  background-color: #ffffff;
+  border-bottom: 1px solid #40beff;
   border-radius: 10px;
   padding-inline-start: 20px;
   margin: 2px;
@@ -91,16 +102,20 @@
   height:1.3em;
   cursor: pointer;
   border-radius: 50%;
-  background-color: rgb(246, 230, 6);
-  border: 1px solid rgb(246, 230, 6);
+  background-color: rgb(246 195 230);
+  border: 1px solid rgb(246 195 230);
   -webkit-appearance: none;
+  
 }
 
 .check:checked {
-  background-color: #07ff28;
-  border: 1ps solid #07ff28;
-}
+  background-color: rgba(148, 187, 233, 1);
 
+}
+input[type=date] {
+  border: 1px solid rgb(242, 236, 236);
+  border-radius: 10px;
+}
 .task {
   font-size: 18px;
   width: 800px;
@@ -108,7 +123,8 @@
   background: transparent;
   font-size: 20px;
   border: none;
-  color: #fff;
+  color: #044c92;
+
 
 }
  .border-line {
@@ -124,9 +140,13 @@
   float: right;
   cursor: pointer;
 }
-
-.app ul li i:hover {
-  color: rgb(255, 82, 82);
+.hide {
+  display: none;
+}
+.app ul li i:hover + .hide {
+  display: block;
+  color: red;
+  color: rgba(148, 187, 233, 1);
 }
 
 .completed {
