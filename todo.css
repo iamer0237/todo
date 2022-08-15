@@ -3,8 +3,15 @@ body{
 	margin: 0;
     padding-top: 100px;
     min-height: 100vh;
+
+    background-image: url("calender.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
     background: rgb(238,174,202);
     background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+
 }
 * {
   margin: 0;
@@ -24,6 +31,8 @@ body{
   width: 60%;
   --color-bg: white;
   --wrapper-border: 10px solid #204975;
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+
 }
 
 .app h1 {
@@ -41,14 +50,19 @@ body{
 .app form {
   display: flex;
   width: 100%;
-  /* background-color: #262e4c; */
+#  /* background-color: #262e4c; */
+#
 }
 
 .app form input {
   border: none;
   background-color: #ffffff;
   font-size: 20px;
+
+  color: #f01206;
+
   color: #044c92;
+
   padding: 10px;
   width: 80%;
   border-radius: 20px;
@@ -97,19 +111,38 @@ body{
   background-color: rgb(246 195 230);
   border: 1px solid rgb(246 195 230);
   -webkit-appearance: none;
+  
 }
 
 .check:checked {
   background-color: rgba(148, 187, 233, 1);
+
+
 }
 
+
+}
+input[type=date] {
+  border: 1px solid rgb(242, 236, 236);
+  border-radius: 10px;
+}
 .task {
   font-size: 18px;
   padding: 0 10px;
   width: fit-content;
   background: transparent;
   border: none;
+
+  color: #044c92;
+
+
+}
+ .border-line {
+  border: 1px solid #094181;
+  box-shadow: 5px 5px #cca48a;
+#
   color: #012a9d;
+#
 }
 
 .task:focus {
@@ -120,9 +153,16 @@ body{
   float: right;
   cursor: pointer;
 }
-
+#
+.hide {
+  display: none;
+}
+.app ul li i:hover + .hide {
+  display: block;
+  color: red;
+#
 .app ul li i:hover {
-  color: rgba(148, 187, 233, 1);
+#  color: rgba(148, 187, 233, 1);
 }
 
 .completed {
